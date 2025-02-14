@@ -1,0 +1,75 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<filter id="shadow" x="0%" y="0%" width="140%" height="140%">
+			<feDropShadow dx="3" dy="3" stdDeviation="1.5" flood-opacity=".3" />
+		</filter>
+	</defs>
+
+	<linearGradient id="circleLinGrd" x1="0%" y1="0%" x2="100%" y2="100%" spreadMethod="pad">
+		<stop offset="0%" stop-color="#0cf" stop-opacity="1" />
+		<stop offset="33%" stop-color="#039" stop-opacity="1" />
+	</linearGradient>
+	<circle cx="50" cy="52" r="47" fill="url(#circleLinGrd)"  /><!--filter="url(#shadow)"-->
+
+	<radialGradient id="circleRadGrd" x1="33%" x2="67%" spreadMethod="pad">
+		<stop offset="85%" stop-color="#ddd" stop-opacity="1" />
+		<stop offset="100%" stop-color="transparent" stop-opacity="" />
+	</radialGradient>
+	<circle cx="50" cy="52" r="47" fill="url(#circleRadGrd)" />
+
+	<rect x="43" y="1" rx="3" width="14" height="33" fill="url(#circleLinGrd)" />
+
+	<linearGradient id="vLinGrd" x1="0" y1="0" x2="0" y2="100%" spreadMethod="pad">
+		<stop offset="0%" stop-color="transparent" stop-opacity="1" />
+		<stop offset="8.5%" stop-color="#ddd" stop-opacity="1" />
+		<stop offset="92.5%" stop-color="#ddd" stop-opacity="1" />
+		<stop offset="100%" stop-color="transparent" stop-opacity="1" />
+	</linearGradient>
+	<rect x="46" y="1" width="8" height="33" fill="url(#vLinGrd)" />
+
+	<linearGradient id="hLinGrd" x1="0" y1="0" x2="100%" y2="0" spreadMethod="pad">
+		<stop offset="0%" stop-color="transparent" stop-opacity="1" />
+		<stop offset="20%" stop-color="#ddd" stop-opacity="1" />
+		<stop offset="80%" stop-color="#ddd" stop-opacity="1" />
+		<stop offset="100%" stop-color="transparent" stop-opacity="1" />
+	</linearGradient>
+	<rect x="43" y="4" width="14" height="27" fill="url(#hLinGrd)" />
+
+	<radialGradient id="nwCornerGrd" cx="100%" cy="100%" r="1">
+		<stop offset="0%" stop-color="#ddd" stop-opacity="1" />
+		<stop offset="100%" stop-color="transparent" stop-opacity="1" />
+	</radialGradient>
+	<path d="M43 4.01 A3 3 0 0 1 46 1 L46.04 4.04 Z" fill="url(#nwCornerGrd)" />
+
+	<radialGradient id="neCornerGrd" cx="0%" cy="100%" r="1">
+		<stop offset="0%" stop-color="#ddd" stop-opacity="1" />
+		<stop offset="100%" stop-color="transparent" stop-opacity="1" />
+	</radialGradient>
+	<path d="M54 1 A3 3 0 0 1 57 4 L54 4 Z" fill="url(#neCornerGrd)" />
+
+	<radialGradient id="seCornerGrd" cx="0%" cy="0%" r="1">
+		<stop offset="0%" stop-color="#ddd" stop-opacity="1" />
+		<stop offset="100%" stop-color="transparent" stop-opacity="1" />
+	</radialGradient>
+	<path d="M57 31 A3 3 0 0 1 54 34 L54 31 Z" fill="url(#seCornerGrd)" />
+
+	<radialGradient id="swCornerGrd" cx="100%" cy="0%" r="1">
+		<stop offset="0%" stop-color="#ddd" stop-opacity="1" />
+		<stop offset="100%" stop-color="transparent" stop-opacity="1" />
+	</radialGradient>
+	<path d="M46 34 A3 3 0 0 1 43 31 L46 31 Z" fill="url(#swCornerGrd)" />
+
+	<defs>
+		<filter id="text-shadow" x="0%" y="0%" width="140%" height="140%">
+			<feDropShadow dx="0" dy="0" stdDeviation="1" flood-opacity="1" flood-color="#6cadd8" />
+		</filter>
+	</defs>
+	<linearGradient id="zLinGrid" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+		<stop offset="0%" stop-color="#013" stop-opacity="1" />
+		<stop offset="50%" stop-color="#039" stop-opacity="1" />
+		<stop offset="100%" stop-color="#013" stop-opacity="1" />
+	</linearGradient>
+	<text x="50" y="67" font-family="serif" font-size="57" dominant-baseline="middle" text-anchor="middle" fill="url(#zLinGrid)" filter="url(#text-shadow)">
+		Z
+	</text>
+</svg>
