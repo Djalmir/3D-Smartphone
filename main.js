@@ -1,4 +1,4 @@
-import "/components/Smartphone.js"
+import "./components/Smartphone.js"
 import { dispatchEvent } from "./utils/events.js"
 
 const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')
