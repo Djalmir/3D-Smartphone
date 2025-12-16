@@ -123,12 +123,18 @@ style.textContent = /*css*/`
     box-shadow: -1px -1px 2px 1px #ffffff20, 1px 1px 2px 1px #00000070;
   }
 
-  .back b {
+  .back .razion-logo {
     position: absolute;
     bottom: 77px;
     left: 50%;
-    color: #eee;
+    width: 111px;
+    height: auto;
     transform: translateX(-50%);
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    filter: drop-shadow(1px 1px 1px #00000070);
   }
 
   .top,
@@ -466,7 +472,8 @@ template.innerHTML = /*html*/`
         <div class="camera"></div>
         <div class="flashlight"></div>
         <div class="fingerprint-scanner"></div>
-        <b>RAZION</b>
+        <!--<b>RAZION</b>-->
+        <img src="./public/razion-logo.png" alt="Razion Logo" class="razion-logo">
       </div>
     </div>
   </div>
@@ -573,7 +580,7 @@ export default class Smartphone extends HTMLElement {
     if (this.autoAnimate)
       autoAnim()
 
-    if(this.interactiveScreen)
+    if (this.interactiveScreen)
       this.shadowRoot.querySelector('.front .screen').style.pointerEvents = 'all'
   }
 }

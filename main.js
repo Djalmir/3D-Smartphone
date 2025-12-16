@@ -17,10 +17,12 @@ function changeTheme() {
     if (prefersDark.matches) {
       document.documentElement.classList.replace('light-theme', 'dark-theme')
       document.querySelector("[name=theme-color]").setAttribute("content", "#1b1b1b")
+      document.querySelector("link[rel='icon']").setAttribute("href", "./public/razion-logo.svg")
     }
     else {
       document.documentElement.classList.replace('dark-theme', 'light-theme')
       document.querySelector("[name=theme-color]").setAttribute("content", "#dddddd")
+      document.querySelector("link[rel='icon']").setAttribute("href", "./public/razion-gold-logo.svg")
     }
   }, 0)
 }
