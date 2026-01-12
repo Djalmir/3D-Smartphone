@@ -87,14 +87,16 @@ body {
 
 .screen {
   height: 100%;
-	display: grid;
-	place-items: center;
+}
+
+.screen * {
+  height: 100%;
+  width: 100%;
 }
 
 .screen .razion-logo {
-  margin: 17px;
-}
-
-iframe {
-  height: 100%;
+	display: block;
+	max-width: 90%;
+	max-height: 90%;
+	margin: 2.5% auto;
 }

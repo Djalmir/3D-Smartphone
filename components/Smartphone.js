@@ -55,7 +55,6 @@ style.textContent = /*css*/`
   }
 
   .front .screen {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -372,10 +371,10 @@ template.innerHTML = /*html*/`
       <div class="center"></div>
 
       <div class="front face">
-        <div class="speaker"></div>
         <div class="screen">
           <slot></slot>
         </div>
+        <div class="speaker"></div>
         <div class="camera"></div>
       </div>
           
@@ -562,7 +561,23 @@ export default class Smartphone extends HTMLElement {
       })
     }
 
+    let rotatedContent = false
     const transformPhone = () => {
+      let screen = phone.querySelector('.screen')
+      if (rotateZ >= 360 || rotateZ <= -360)
+        rotateZ = 0
+      if ((rotateZ >= 22.5 || rotateZ <= -22.5) && !rotatedContent) {
+        rotatedContent = true
+        screen.style.transform = `rotate(${rotateZ > 0 ? -90 : 90}deg) translate3d(${rotateZ > 0 ? '-163px, -170px, 10px' : '163px, 170px, 10px'})`
+        screen.style.width = '636px'
+        screen.style.height = '296px'
+      }
+      else if ((rotateZ < 22.5 && rotateZ > -22.5) && rotatedContent) {
+        rotatedContent = false
+        screen.style.transform = 'none'
+        screen.style.width = '100%'
+        screen.style.height = '100%'
+      }
       phone.style.transform = `translateX(${translateX}px) translateY(${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
       this.style.transform = `scale(${scale})`
       sessionStorage.setItem('smartphone-3d-transform', JSON.stringify({ translateX, translateY, rotateX, rotateY, rotateZ, scale }))
