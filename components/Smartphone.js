@@ -566,13 +566,13 @@ export default class Smartphone extends HTMLElement {
       let screen = phone.querySelector('.screen')
       if (rotateZ >= 360 || rotateZ <= -360)
         rotateZ = 0
-      if ((rotateZ >= 22.5 || rotateZ <= -22.5) && !rotatedContent) {
+      if ((rotateZ >= 45 || rotateZ <= -45) && !rotatedContent) {
         rotatedContent = true
-        screen.style.transform = `rotate(${rotateZ > 0 ? -90 : 90}deg) translate3d(${rotateZ > 0 ? '-163px, -170px, 10px' : '163px, 170px, 10px'})`
+        screen.style.transform = `rotate(${rotateZ > 0 ? -90 : 90}deg) translate3d(${rotateZ > 0 ? '-163px, -171px, 10px' : '163px, 171px, 10px'})`
         screen.style.width = '636px'
         screen.style.height = '296px'
       }
-      else if ((rotateZ < 22.5 && rotateZ > -22.5) && rotatedContent) {
+      else if ((rotateZ < 45 && rotateZ > -45) && rotatedContent) {
         rotatedContent = false
         screen.style.transform = 'none'
         screen.style.width = '100%'
