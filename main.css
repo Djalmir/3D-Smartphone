@@ -85,6 +85,16 @@ body {
 	background: linear-gradient(145deg, var(--light-bg2), var(--light-bg1));
 }
 
+.screen {
+  height: 100%;
+	display: grid;
+	place-items: center;
+}
+
+.screen .razion-logo {
+  margin: 17px;
+}
+
 iframe {
   height: 100%;
 }

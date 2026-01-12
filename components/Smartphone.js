@@ -472,8 +472,7 @@ template.innerHTML = /*html*/`
         <div class="camera"></div>
         <div class="flashlight"></div>
         <div class="fingerprint-scanner"></div>
-        <!--<b>RAZION</b>-->
-        <img src="./public/razion-logo.png" alt="Razion Logo" class="razion-logo">
+        <img src="/public/razion-logotipo.png" alt="Razion Logo" class="razion-logo">
       </div>
     </div>
   </div>
@@ -570,10 +569,21 @@ export default class Smartphone extends HTMLElement {
     }
     transformPhone()
 
-    function autoAnim() {
-      if (!mousePos) {
-        rotateY--
-        phone.style.transform = `translateX(${translateX}px) translateY(${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`
+    let lastFrameTime = 0
+    const frameDuration = 1000 / 60
+
+    function autoAnim(now) {
+      if (!lastFrameTime) lastFrameTime = now
+      const delta = now - lastFrameTime
+
+      if (delta >= frameDuration) {
+        const steps = Math.floor(delta / frameDuration)
+        lastFrameTime = now - (delta % frameDuration)
+
+        if (!mousePos) {
+          rotateY -= steps
+          phone.style.transform = `translateX(${translateX}px) translateY(${translateY}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`
+        }
       }
       requestAnimationFrame(autoAnim)
     }

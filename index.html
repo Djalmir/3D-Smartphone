@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark-theme">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,17 @@
   <link rel="icon" type="image/svg+xml" href="./public/razion-logo.svg" />
   <title>Smartphone</title>
 </head>
+
 <body>
   <smartphone-3d id="smartphone" transform='{ "rotateX": 35, "rotateY": -15, "rotateZ": 10 }' allowMove allowRotation allowZoom interactiveScreen>
-    <iframe src="https://lp.razion.games" frameborder="0"></iframe>
-     <!-- <iframe src="https://razion.games" frameborder="0"></iframe> -->
-     <!-- <iframe src="https://djalmir.github.io" frameborder="0"></iframe> -->
+    <div class="screen">
+      <!-- <iframe src="https://lp.razion.games" frameborder="0"></iframe> -->
+      <!-- <iframe src="https://razion.games" frameborder="0"></iframe> -->
+      <!-- <iframe src="https://djalmir.github.io" frameborder="0"></iframe> -->
+      <img class="razion-logo" src="./public/razion-logo.svg" alt="razion logo" draggable="false" style="user-select: none; -webkit-user-drag: none; pointer-events: none;" />
+    </div>
   </smartphone-3d>
   <script src="./main.js" type="module"></script>
 </body>
+
 </html>
